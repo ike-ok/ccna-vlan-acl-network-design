@@ -2,15 +2,19 @@
 Network Design for a 100 user Bank
 
 Project Title
+
 Enterprise VLAN Segmentation with ACL Security
 
 Overview
+
 This project demonstrates VLAN segmentation, DHCP configuration, inter-VLAN routing, and access control lists implemented in Cisco Packet Tracer.
 
 Technologies
+
 Cisco IOS, VLANs, Router on a Stick, DHCP, Extended ACLs, Trunking (802.1Q)
 
 Network Design
+
 5 departmental networks were created:
 
 VLAN: 10
@@ -34,6 +38,7 @@ Department: IT
 Subnet: 192.168.28.160 /28
 
 Security Policy
+
 The following access control policy was implemented:
 -Customer Service is not allowed access to any other subnet
 -No other department subnet is allowed to access IT's subnet
@@ -45,6 +50,7 @@ access-list 100 deny ip 192.168.28.0 0.0.0.63 192.168.28.64 0.0.0.63
 access-list 100 deny ip 192.168.28.0 0.0.0.63 192.168.28.128 0.0.0.63  
 
 Features Demonstrated
+
 -VLAN segementation
 -Inter-VLAN routing
 -DHCP configuration
