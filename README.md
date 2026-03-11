@@ -1,19 +1,17 @@
-# ccna-vlan-acl-network-design
-Network Design for a 100 user Bank
 
-Project Title
 
-Enterprise VLAN Segmentation with ACL Security
+<h1> Enterprise VLAN Segmentation with ACL Security for a 100 User Bank </h1> 
 
-Overview
+
+<h3> Overview </h3>
 
 This project demonstrates VLAN segmentation, DHCP configuration, inter-VLAN routing, and access control lists implemented in Cisco Packet Tracer.
 
-Technologies
+<h3> Technologies </h3>
 
 Cisco IOS, VLANs, Router on a Stick, DHCP, Extended ACLs, Trunking (802.1Q)
 
-Network Design
+<h3> Network Design </h3>
 
 5 departmental networks were created:
 
@@ -37,22 +35,28 @@ VLAN: 50
 Department: IT
 Subnet: 192.168.28.160 /28
 
-Security Policy
+<h3> Security Policy </h3>
+The following access control policy was implemented: <br>
 
-The following access control policy was implemented:
--Customer Service is not allowed access to any other subnet
--No other department subnet is allowed to access IT's subnet
--Inter-VLAN routing is handled by router subinterfaces
+<ul>
+<li> Customer Service is not allowed access to any other subnet </li>
+<li> No other department subnet is allowed to access IT's subnet </li>
+<li> Inter-VLAN routing is handled by router subinterfaces </li>
+</ul>
 
-Key Configurations
-Access-list 100 deny ip any 192.168.28.160 0.0.0.15
-access-list 100 deny ip 192.168.28.0 0.0.0.63 192.168.28.64 0.0.0.63 
-access-list 100 deny ip 192.168.28.0 0.0.0.63 192.168.28.128 0.0.0.63  
+<h5> Key Configurations </h5>
+<ul> 
+  <li> access-list 100 deny ip any 192.168.28.160 0.0.0.15 </li>
+<li> access-list 100 deny ip 192.168.28.0 0.0.0.63 192.168.28.64 0.0.0.63 </li> 
+<li> access-list 100 deny ip 192.168.28.0 0.0.0.63 192.168.28.128 0.0.0.63 </li>  
+</ul>
 
-Features Demonstrated
+<h3> Features Demonstrated </h3>
 
--VLAN segementation
--Inter-VLAN routing
--DHCP configuration
--Extended ACL filtering
--Network security policy enforcement
+<ul> 
+  <li> VLAN segementation </li>
+<li> Inter-VLAN routing </li>
+<li> DHCP configuration </li>
+<li> Extended ACL filtering </li>
+<li> Network security policy enforcement </li>
+</ul>
