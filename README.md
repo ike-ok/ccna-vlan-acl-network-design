@@ -12,6 +12,7 @@ Cisco IOS, VLANs, Router on a Stick, DHCP, Extended ACLs, Trunking (802.1Q)
 
 Network Design
 5 departmental networks were created:
+
 VLAN: 10
 Department: Customer Service
 Subnet:192.168.28.0 /26
