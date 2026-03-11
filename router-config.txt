@@ -1,1 +1,132 @@
+Current configuration : 2211 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Router
+!
+!
+!
+!
+ip dhcp excluded-address 192.168.28.1
+ip dhcp excluded-address 192.168.28.65
+ip dhcp excluded-address 192.168.28.97
+ip dhcp excluded-address 192.168.28.129
+ip dhcp excluded-address 192.168.28.161
+!
+ip dhcp pool Customer_Service
+ network 192.168.28.0 255.255.255.192
+ default-router 192.168.28.1
+ dns-server 192.168.28.172
+ip dhcp pool Loans
+ network 192.168.28.64 255.255.255.224
+ default-router 192.168.28.65
+ dns-server 192.168.28.172
+ip dhcp pool Marketing
+ network 192.168.28.96 255.255.255.224
+ default-router 192.168.28.97
+ dns-server 192.168.28.172
+ip dhcp pool Sales
+ network 192.168.28.128 255.255.255.224
+ default-router 192.168.28.129
+ dns-server 192.168.28.172
+ip dhcp pool IT
+ network 192.168.28.160 255.255.255.240
+ default-router 192.168.28.161
+ dns-server 192.168.28.172
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO1941/K9 sn FTX152472T9-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ no ip address
+ ip access-group 100 in
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0.10
+ encapsulation dot1Q 10
+ ip address 192.168.28.1 255.255.255.192
+ ip access-group 100 in
+!
+interface GigabitEthernet0/0.20
+ encapsulation dot1Q 20
+ ip address 192.168.28.65 255.255.255.224
+ ip access-group 100 out
+!
+interface GigabitEthernet0/0.30
+ encapsulation dot1Q 30
+ ip address 192.168.28.97 255.255.255.224
+!
+interface GigabitEthernet0/0.40
+ encapsulation dot1Q 40
+ ip address 192.168.28.129 255.255.255.224
+!
+interface GigabitEthernet0/0.50
+ encapsulation dot1Q 50
+ ip address 192.168.28.161 255.255.255.240
+ ip access-group 100 out
+!
+interface GigabitEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+access-list 100 deny ip any 192.168.28.160 0.0.0.15
+access-list 100 deny ip 192.168.28.0 0.0.0.63 192.168.28.64 0.0.0.63
+access-list 100 deny ip 192.168.28.0 0.0.0.63 192.168.28.128 0.0.0.63
+access-list 100 permit ip any any
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
 
